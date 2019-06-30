@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    sentinel:
+      filter:
+        url-patterns: "/api/*"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:  "sentinel"
