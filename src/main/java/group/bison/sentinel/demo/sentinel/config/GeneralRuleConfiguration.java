@@ -28,7 +28,6 @@ public class GeneralRuleConfiguration {
     @Bean
     @Order(1)
     public void flowRuleConfig() {
-
     }
 
     @Bean

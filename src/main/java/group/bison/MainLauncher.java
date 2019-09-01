@@ -1,14 +1,13 @@
-package group.bison.sentinel.demo;
+package group.bison;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.actuate.autoconfigure.endpoint.condition.ConditionalOnEnabledEndpoint;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * Created by BSONG on 2019/6/30.
  */
-@SpringBootApplication(scanBasePackages = "group.bison.sentinel.demo")
+@SpringBootApplication(scanBasePackages = "group.bison")
 @EnableAutoConfiguration
 public class MainLauncher {
 

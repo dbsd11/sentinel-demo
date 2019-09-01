@@ -56,5 +56,12 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!--router-->
+        <dependency>
+            <groupId>com.sankuai.waimai.router</groupId>
+            <artifactId>interfaces</artifactId>
+            <version>1.2.0</version>
+        </dependency>
     </dependencies>
 </project>
