@@ -1,6 +1,7 @@
 package com.sankuai.waimai.router;
 
 import com.sankuai.waimai.router.annotation.RouterProvider;
+import com.sankuai.waimai.router.common.DefaultRootUriHandler;
 import com.sankuai.waimai.router.common.PageAnnotationHandler;
 import com.sankuai.waimai.router.core.Context;
 import com.sankuai.waimai.router.core.Debugger;
@@ -9,6 +10,7 @@ import com.sankuai.waimai.router.core.UriRequest;
 import com.sankuai.waimai.router.method.*;
 import com.sankuai.waimai.router.service.IFactory;
 import com.sankuai.waimai.router.service.ServiceLoader;
+import group.bison.router.demo.gateway.IGatewayRouterService;
 import org.springframework.lang.NonNull;
 
 import java.util.List;
@@ -200,6 +202,14 @@ public class Router {
                         args[4], args[5], args[6], args[7], args[8]);
             default:
                 return (T) getService(FuncN.class, key).call(args);
+        }
+    }
+
+    public static void main(String[] args) {
+        Router.init(new DefaultRootUriHandler(new Context()));
+        List<IGatewayRouterService> gatewayRouterServiceList = Router.getAllServices(IGatewayRouterService.class);
+        for (IGatewayRouterService gatewayRouterService : gatewayRouterServiceList) {
+            System.out.println(gatewayRouterService.invoke("aaaa", null));
         }
     }
 }
